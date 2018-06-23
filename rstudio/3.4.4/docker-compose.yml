@@ -4,7 +4,7 @@ services:
 
   rstudio:
     build: .
-    image: timtrice/rstudio:3.4.3
+    image: timtrice/rstudio:3.4.4
     container_name: rstudio
     restart: "always"
     volumes:
