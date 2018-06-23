@@ -3,8 +3,7 @@ version: '3.4'
 services:
 
   rstudio:
-    build: .
-    image: timtrice/rstudio:3.4.3
+    image: timtrice/docker:rstudio_3.4.3
     container_name: rstudio
     restart: "always"
     volumes:
