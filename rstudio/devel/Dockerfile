@@ -62,6 +62,7 @@ RUN apt-get update \
   && install2.r -e -r https://timtrice.github.io/drat/ \
     rrricanesdata \
   && installGithub.r \
+    BillPetti/baseballr \
     DavisVaughan/flyingfox \
 		DavisVaughan/furrr \ 
 		eddelbuettel/drat \
