@@ -10,7 +10,7 @@ RUN apt-get update \
     r-cran-littler \
     # These next two are for XLConnect (a dependency of tidyquant)
     openjdk-8-jdk \
-		r-cran-rjava \
+    r-cran-rjava \
     # Database drivers
     unixodbc  \
     unixodbc-dev \
@@ -22,13 +22,13 @@ RUN apt-get update \
     # This is for me.
     vim \
     curl \
-		wget \
-		# Python stuff
-		python-pip \
-		python3-pip \
-		python-numpy \ 
-		python-scipy \ 
-		python-pandas \
+    wget \
+    # Python stuff
+    python-pip \
+    python3-pip \
+    python-numpy \ 
+    python-scipy \ 
+    python-pandas \
     # For MS SQL Server \ need to install ODBC 13 Driver (17 not avail as of now).
   && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
   && curl https://packages.microsoft.com/config/debian/8/prod.list > /etc/apt/sources.list.d/mssql-release.list \
@@ -41,19 +41,19 @@ RUN apt-get update \
   && install2.r -e \
     blogdown \
     corrplot \
-		crul \
+    crul \
     ggrepel \
-		Hmisc \
+    Hmisc \
     miniUI \
     pander \
     PKI \
     RCurl \
-		rgdal \
-		rgeos \
+    rgdal \
+    rgeos \
     RJSONIO \
     rnaturalearthdata \
     rsconnect \
-		servr \
+    servr \
     skimr \
     sweep \
     tibbletime \
@@ -62,18 +62,20 @@ RUN apt-get update \
   && install2.r -e -r https://timtrice.github.io/drat/ \
     rrricanesdata \
   && installGithub.r \
+    # reticulate v1.7 must be installed via GitHub before flyingfox
+    rstudio/reticulate@cran/v1.7 \ 
     DavisVaughan/flyingfox \
-		DavisVaughan/furrr \ 
-		eddelbuettel/drat \
-		r-dbi/DBI \
+    DavisVaughan/furrr \ 
+    eddelbuettel/drat \
+    r-dbi/DBI \
     r-dbi/odbc \
     r-dbi/RMariaDB \
     r-dbi/RPostgres \
-		r-lib/fs \
-		r-lib/pkgdown \
+    r-lib/fs \
+    r-lib/pkgdown \
     ropensci/rrricanes \
     rstudio/rstudioapi \ 
-		timtrice/HURDAT \
+    timtrice/HURDAT \
     timtrice/NCDCStormEvents \
     yihui/xfun \
 	# tinytex
@@ -82,7 +84,7 @@ RUN apt-get update \
     options(blogdown.hugo.dir = '/home/rstudio/bin/')\n" \
     >> /usr/local/lib/R/etc/Rprofile.site \
   && R -e "blogdown::install_hugo()" \
-	&& R -e "flyingfox::install_zipline()" \
+  && R -e "flyingfox::install_zipline()" \
   && mkdir -p /home/rstudio/.rstudio/monitored/user-settings \
   && git config --global user.email "tim.trice@gmail.com" \
   && git config --global user.name "Tim Trice"
