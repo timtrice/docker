@@ -72,6 +72,7 @@ RUN apt-get update \
 		r-lib/fs \
 		r-lib/pkgdown \
     ropensci/rrricanes \
+    rstudio/rstudioapi \ 
 		timtrice/HURDAT \
     timtrice/NCDCStormEvents \
     yihui/xfun \
