@@ -63,6 +63,8 @@ RUN apt-get update \
     rrricanesdata \
   && installGithub.r \
     BillPetti/baseballr \
+    # reticulate v1.7 must be installed via GitHub before flyingfox
+    rstudio/reticulate@cran/v1.7 \ 
     DavisVaughan/flyingfox \
 		DavisVaughan/furrr \ 
 		eddelbuettel/drat \
