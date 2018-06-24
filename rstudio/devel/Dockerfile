@@ -1,4 +1,4 @@
-FROM rocker/tidyverse:3.5.0
+FROM rocker/tidyverse:devel
 
 # Update system software
 RUN apt-get update \
