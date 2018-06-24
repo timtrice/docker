@@ -1,4 +1,4 @@
-FROM rocker/tidyverse:3.4.4
+FROM rocker/tidyverse:3.5.0
 
 # Update system software
 RUN apt-get update \
@@ -23,6 +23,12 @@ RUN apt-get update \
     vim \
     curl \
 		wget \
+		# Python stuff
+		python-pip \
+		python3-pip \
+		python-numpy \ 
+		python-scipy \ 
+		python-pandas \
     # For MS SQL Server \ need to install ODBC 13 Driver (17 not avail as of now).
   && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
   && curl https://packages.microsoft.com/config/debian/8/prod.list > /etc/apt/sources.list.d/mssql-release.list \
@@ -30,6 +36,8 @@ RUN apt-get update \
   && ACCEPT_EULA=Y apt-get install msodbcsql \
   # Set java conf
   && R CMD javareconf \
+	# Install virtualenv
+	&& pip install virtualenv \ 
   && install2.r -e \
     blogdown \
     corrplot \
@@ -73,6 +81,7 @@ RUN apt-get update \
     options(blogdown.hugo.dir = '/home/rstudio/bin/')\n" \
     >> /usr/local/lib/R/etc/Rprofile.site \
   && R -e "blogdown::install_hugo()" \
+	&& R -e "flyingfox::install_zipline()" \
   && mkdir -p /home/rstudio/.rstudio/monitored/user-settings \
   && git config --global user.email "tim.trice@gmail.com" \
   && git config --global user.name "Tim Trice"
