@@ -56,12 +56,12 @@ RUN apt-get update \
     ropensci/rrricanes \
     timtrice/NCDCStormEvents \
     yihui/xfun \
-  && echo "
-    # set CRAN mirrors \
-    options('repos' = c(getOption('repos'), \
-                          'https://timtrice.github.io/drat/'), \
-            'blogdown.hugo.dir'      = '/home/rstudio/bin/', \
-            'warnPartialMatchArgs'   = TRUE,  \
-            'warnPartialMatchDollar' = TRUE, \
-            'warnPartialMatchAttr'   = TRUE) " >> /usr/local/lib/R/etc/Rprofile.site \
+  && echo "\n# set CRAN mirrors \
+    \noptions('repos' = c(getOption('repos'), \
+    \n\t\t\t\t\t\t\t\t\t\t'https://timtrice.github.io/drat/'), \
+    \n\t\t\t\t'blogdown.hugo.dir' = '/home/rstudio/bin/', \
+    \n\t\t\t\'twarnPartialMatchArgs' = TRUE,  \
+    \n\t\t\t\'twarnPartialMatchDollar' = TRUE, \
+    \n\t\t\t\'twarnPartialMatchAttr' = TRUE) \
+    \n" >> /usr/local/lib/R/etc/Rprofile.site \
   && R -e "blogdown::install_hugo()"
