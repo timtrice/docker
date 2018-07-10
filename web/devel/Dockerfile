@@ -34,6 +34,8 @@ RUN apt-get update \
     ggrepel \
     HURDAT \
     miniUI \
+    # Reinstall for R +3.5
+    nnet \
     packrat \
     pander \
     PKI \
@@ -60,8 +62,8 @@ RUN apt-get update \
     \noptions('repos' = c(getOption('repos'), \
     \n\t\t\t\t\t\t\t\t\t\t'https://timtrice.github.io/drat/'), \
     \n\t\t\t\t'blogdown.hugo.dir' = '/home/rstudio/bin/', \
-    \n\t\t\t\'twarnPartialMatchArgs' = TRUE,  \
-    \n\t\t\t\'twarnPartialMatchDollar' = TRUE, \
-    \n\t\t\t\'twarnPartialMatchAttr' = TRUE) \
+    \n\t\t\t\t'warnPartialMatchArgs' = TRUE,  \
+    \n\t\t\t\t'warnPartialMatchDollar' = TRUE, \
+    \n\t\t\t\t'warnPartialMatchAttr' = TRUE) \
     \n" >> /usr/local/lib/R/etc/Rprofile.site \
   && R -e "blogdown::install_hugo()"
