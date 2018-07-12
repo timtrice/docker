@@ -64,4 +64,5 @@ RUN apt-get update \
     \n\t\t\t\t'warnPartialMatchDollar' = TRUE, \
     \n\t\t\t\t'warnPartialMatchAttr' = TRUE) \
     \n" >> /usr/local/lib/R/etc/Rprofile.site \
-  && R -e "blogdown::install_hugo()"
+  && R -e "blogdown::install_hugo()" \
+  && chown -R rstudio:rstudio /home/rstudio/bin
