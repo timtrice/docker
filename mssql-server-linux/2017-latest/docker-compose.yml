@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+
+  mssql:
+    image: microsoft/mssql-server-linux:2017-latest
+    container_name: mssql
+    restart: always
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: O43ccxkLY4WtTHy6
+    volumes:
+      - mssql:/var/opt/mssql/data
+    ports:
+      - "1433:1433"
+
+networks:
+  default:
+    external:
+      name: databases
+
+volumes:
+  mssql:
+    external: true
+
