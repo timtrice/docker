@@ -7,7 +7,8 @@ RUN apt-get update \
   libgdal-dev \
   libproj-dev \
   vim \
-  curl
-
-# Install R packages from GitHub
-RUN installGithub.r eddelbuettel/drat
+    curl \ 
+	&& installGithub.r -d TRUE \
+    eddelbuettel/drat \
+    ropensci/rrricanes \
+    ropensci/rrricanesdata
