@@ -10,7 +10,6 @@ RUN apt-get update \
 		blogdown \
 		bookdown \
 		DT \
-		furrr \
 		ggrepel \
 		janitor \
 		sweep \
