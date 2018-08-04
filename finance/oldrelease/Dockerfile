@@ -9,8 +9,10 @@ RUN apt-get update \
 	&& install2.r -e -d TRUE \
 		blogdown \
 		bookdown \
+		DT \
 		furrr \
 		ggrepel \
+		janitor \
 		sweep \
 		tibbletime \ 
 		workflowr \ 
