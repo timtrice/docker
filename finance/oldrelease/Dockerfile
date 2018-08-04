@@ -15,9 +15,6 @@ RUN apt-get update \
 		tibbletime \ 
 		workflowr \ 
 	&& installGithub.r -d TRUE \
-	# No specified releases for blotter
-	braverock/blotter \
-	# No specified releases for quantstrat
-	braverock/quantstrat \
-	DavisVaughan/flyingfox \
+		DavisVaughan/flyingfox \
+		DavisVaughan/furrr \
 && R -e "flyingfox::install_zipline()"
