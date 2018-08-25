@@ -22,4 +22,5 @@ RUN apt-get update \
 	# No specified releases for quantstrat
 	braverock/quantstrat \
 	DavisVaughan/flyingfox \
+	thomasp85/patchwork \
 && R -e "flyingfox::install_zipline()"
