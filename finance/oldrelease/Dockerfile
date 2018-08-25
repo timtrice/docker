@@ -18,5 +18,6 @@ RUN apt-get update \
 	&& installGithub.r -d TRUE \
 		DavisVaughan/flyingfox \
 		DavisVaughan/furrr \
+		hadley/multidplyr \
 		thomasp85/patchwork \
 && R -e "flyingfox::install_zipline()"
