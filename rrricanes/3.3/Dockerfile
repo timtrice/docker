@@ -1,29 +1,30 @@
-FROM rocker/rstudio:devel
+FROM rocker/geospatial:3.3.3
 
-RUN apt-get update \ 
-  && apt-get install -y \ 
-    libudunits2-dev \
-    libgdal-dev \ 
-    libproj-dev \
-    vim
+RUN apt-get update
 
 RUN install2.r -e \
     crul \
     curl \
     devtools \
     dplyr \
+    ggplot2 \
     httr \
     lubridate \
     magrittr \
-    maptools \
+    # maptools already included in image
+#    maptools \
     purrr \
     readr \
-    rgdal \
-    rgeos \
+    # rgdal already included in image
+#    rgdal \
+    # rgeos already included in image
+#    rgeos \
     rnaturalearthdata \
     rvest \
-    sf \
-    sp \
+    # sf already included in image
+#    sf \
+    # sp already included in image
+#    sp \
     stringr \
     testthat \
     tibble \
